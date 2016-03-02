@@ -1,0 +1,8 @@
+D:\TestProjects\DesignPatterns\Creational\AbstractFactory\AbstractFactory\bin\Debug\AbstractFactory.exe.config
+D:\TestProjects\DesignPatterns\Creational\AbstractFactory\AbstractFactory\bin\Debug\AbstractFactory.exe
+D:\TestProjects\DesignPatterns\Creational\AbstractFactory\AbstractFactory\bin\Debug\AbstractFactory.pdb
+D:\TestProjects\DesignPatterns\Creational\AbstractFactory\AbstractFactory\bin\Debug\ClassLibrary1.dll
+D:\TestProjects\DesignPatterns\Creational\AbstractFactory\AbstractFactory\bin\Debug\ClassLibrary1.pdb
+D:\TestProjects\DesignPatterns\Creational\AbstractFactory\AbstractFactory\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache
+D:\TestProjects\DesignPatterns\Creational\AbstractFactory\AbstractFactory\obj\Debug\AbstractFactory.exe
+D:\TestProjects\DesignPatterns\Creational\AbstractFactory\AbstractFactory\obj\Debug\AbstractFactory.pdb

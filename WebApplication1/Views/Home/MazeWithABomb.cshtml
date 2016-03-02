@@ -1,0 +1,62 @@
+﻿@model AbstractFactory.Maze
+@using AbstractFactory
+
+@{
+    ViewBag.Title = "Maze with a bomb";
+}
+
+<div class="jumbotron">
+    <h1>Maze built with the Bombed Maze Factory</h1>
+</div>
+
+
+@functions
+{
+    public string SetFormatting(Room r)
+    {
+        string format = "";
+        format += BorderFormat(r.Sides.Where(x => x.Key == Direction.North).FirstOrDefault().Value, "top");
+        format += BorderFormat(r.Sides.Where(x => x.Key == Direction.East).FirstOrDefault().Value, "right");
+        format += BorderFormat(r.Sides.Where(x => x.Key == Direction.South).FirstOrDefault().Value, "bottom");
+        format += BorderFormat(r.Sides.Where(x => x.Key == Direction.West).FirstOrDefault().Value, "left");
+
+        format += RoomColor(r);
+
+        return format;
+    }
+
+    public string BorderFormat(MapSite m, string direction)
+    {
+        if (m.GetType().ToString() == "AbstractFactory.Wall")
+        {
+            return " border-" + direction + ":3px solid black;";
+        }
+        else
+        {
+            return " border-" + direction + ":3px solid red;";
+        }
+    }
+
+    public string RoomColor(MapSite m)
+    {
+        if (m.GetType().ToString() == "AbstractFactory.RoomWithABomb")
+        {
+            return " background-color: black;";
+        }
+        else
+        {
+            return "";
+        }
+    }
+}
+
+<div class="row">
+
+    @foreach (Room r in Model.Rooms)
+    {
+        <div class="col-md-6 room" style="@SetFormatting(r)"></div>
+    }
+
+</div>
+
+
