@@ -25,6 +25,45 @@ textarea {
 
 .room{
     display: inline;
-    /*width:100%;*/
     min-height: 200px;
+}
+.wall-top{
+     border-top:3px solid black;
+}
+
+.wall-right{
+     border-right:3px solid black;
+}
+
+.wall-bottom{
+     border-bottom:3px solid black;
+}
+
+.wall-left{
+     border-left:3px solid black;
+}
+
+
+
+.door-top{
+     border-top:3px solid red;
+}
+
+.door-right{
+     border-right:3px solid red;
+}
+
+.door-bottom{
+     border-bottom:3px solid red;
+}
+
+.door-left{
+     border-left:3px solid red;
+}
+
+.enchanted{
+    background-color:mediumaquamarine;
+}
+.withABomb{
+    background-color:black;
 }

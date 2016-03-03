@@ -1,5 +1,6 @@
 ﻿@model AbstractFactory.Maze
 @using AbstractFactory
+@using WebApplication1.Helpers
 
 @{
     ViewBag.Title = "EnchantedMaze";
@@ -9,52 +10,11 @@
     <h1>Maze built with the Enchanted Maze Factory</h1>
 </div>
 
-
-@functions
-{
-    public string SetFormatting(Room r)
-    {
-        string format = "";
-        format += BorderFormat(r.Sides.Where(x => x.Key == Direction.North).FirstOrDefault().Value, "top");
-        format += BorderFormat(r.Sides.Where(x => x.Key == Direction.East).FirstOrDefault().Value, "right");
-        format += BorderFormat(r.Sides.Where(x => x.Key == Direction.South).FirstOrDefault().Value, "bottom");
-        format += BorderFormat(r.Sides.Where(x => x.Key == Direction.West).FirstOrDefault().Value, "left");
-
-        format += RoomColor(r);
-
-        return format;
-    }
-
-    public string BorderFormat(MapSite m, string direction)
-    {
-        if (m.GetType().ToString() == "AbstractFactory.Wall")
-        {
-            return " border-" + direction + ":3px solid black;";
-        }
-        else
-        {
-            return " border-" + direction + ":3px solid red;";
-        }
-    }
-
-    public string RoomColor(MapSite m)
-    {
-        if (m.GetType().ToString() == "AbstractFactory.EnchantedRoom")
-        {
-            return " background-color: blue;";
-        }
-        else
-        {
-            return "";
-        }
-    }
-}
-
 <div class="row">
 
     @foreach (Room r in Model.Rooms)
     {
-        <div class="col-md-6 room" style="@SetFormatting(r)"></div>
+        @MyHtmlHelpers.FormattedRoomDiv(r)
     }
 
 </div>
